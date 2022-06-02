@@ -64,7 +64,7 @@
   </body>
 </html> {% endcomment %}
 
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8">
@@ -98,4 +98,39 @@
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
    </body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YT Saver</title>
+</head>
+
+<body style="align-items: center;text-align: center;height: fit-content;border: 3px solid green;">
+  <h2>YT SAVER</h2>
+  <b>
+    <p style="color: coral;">Save your favorite youtube videos for free!!</p>
+  </b>
+  <form method="post" action="">
+    {% csrf_token %}
+    <!-- for fetching the video -->
+    <input type="text" name="given_url" value="{{url}}" placeholder="enter url..">
+    <button type="submit" name="fetch-vid" value="fetch-vid">Proceed</button>
+
+    <br>
+    <h3>{{vidTitle}}</h3>
+    <img src="{{vidThumbnail}}" />
+    <br>
+
+    <!-- for downloading the video -->
+    {% for x in stream %}
+    {{x.resolution}} <button type="submit" name="download-vid" value="{{forloop.counter}}">Download</button>|
+    {% endfor %}
+    <br><br>
+  </form>
+</body>
+
 </html>
