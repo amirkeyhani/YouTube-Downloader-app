@@ -26,13 +26,13 @@ SECRET_KEY = 'django-insecure-(bz2dajy4-46fhbu_#=sot$6k(=kwfp!3+wl3@jt9e4^b&-+e2
 DEBUG = False
 
 ALLOWED_HOSTS = ['u-downloader.herokuapp.com', 'localhost']
-# ALLOWED_HOSTS = []
+
 
 # Application definition
 
 INSTALLED_APPS = [
     'youtubedownloaderapp.apps.YoutubedownloaderappConfig',
-    'crispy_forms',
+    # 'crispy_forms',
     
     'django.contrib.admin',
     'django.contrib.auth',
