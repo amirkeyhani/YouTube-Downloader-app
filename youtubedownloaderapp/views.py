@@ -23,21 +23,21 @@
 #             return redirect('home')
 #     return redirect('home')
 
-# from django.shortcuts import render
-# from django.contrib import messages
-# from pytube import *
+from django.shortcuts import render
+from django.contrib import messages
+from pytube import *
 # Create your views here.
 
 
-# def index(request):
-#     if request.method == 'POST':
-#         url = request.POST['url']
-#         video = YouTube(url)
-#         stream = video.streams.get_highest_resolution()
-#         stream.download()
-#         messages.info(request, 'Video Downloaded..')
-#         return render(request, 'home.html')
-#     return render(request, 'home.html')
+def index(request):
+    if request.method == 'POST':
+        url = request.POST['url']
+        video = YouTube(url)
+        stream = video.streams.get_highest_resolution()
+        stream.download()
+        messages.info(request, 'Video Downloaded..')
+        return render(request, 'home.html')
+    return render(request, 'home.html')
 
 
 # from django.views.generic import View
