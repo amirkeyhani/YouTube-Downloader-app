@@ -23,16 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(bz2dajy4-46fhbu_#=sot$6k(=kwfp!3+wl3@jt9e4^b&-+e2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['u-downloader.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['u-downloader.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
     'youtubedownloaderapp.apps.YoutubedownloaderappConfig',
-    # 'crispy_forms',
+    'crispy_forms',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'YouTubeDownloader.urls'
@@ -128,6 +128,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
